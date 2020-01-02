@@ -1,6 +1,7 @@
 # NextEvent
 
- 
+(Refer Requirements and Design Document.pdf/User Manual.pdf for more info)
+
 Requirement and design document
 
 Project overview
@@ -126,10 +127,6 @@ Clicking on Go to Event Listing will redirect users to display all events (Conne
 About Us
 This page provides details about the application and what is does
 Audience : General Users
-
- 
-Entity - Relationship Diagram
-
  
 
 
