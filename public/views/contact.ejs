@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title><%= db.websiteHeaderTitle %></title>
+    <% include ./partials/link_and_scripts.ejs %>
+</head>
+
+<body>
+<% include ./partials/navbar.ejs %>
+<main class="home-page">
+    <section>
+        <h2><%= db.contactUsTitle %></h2>
+        <article>
+            <h3><%= db.contactUsSubtitle %></h3>
+            <div class="card-deck">
+                <div class="card border-secondary mb-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted"><%= db.contactUsDescriptionTitle1 %></h6>
+                        <p class="card-text"><%= db.contactUsDescription1 %></p>
+                        <a href="../user/savedConnections" class="card-link">Go to Saved Events</a>
+                    </div>
+                </div>
+                <div class="card border-secondary mb-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted"><%= db.contactUsDescriptionTitle2 %></h6>
+                        <p class="card-text"><%= db.contactUsDescription2 %></p>
+                        <a href="../connections" class="card-link">Go to Event Listing</a>
+                    </div>
+                </div>
+                <div class="card border-secondary mb-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted"><%= db.contactUsDescriptionTitle3 %></h6>
+                        <p class="card-text"><%= db.contactUsDescription3 %></p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>
+<% include ./partials/footer.ejs %>
+</body>
+</html>

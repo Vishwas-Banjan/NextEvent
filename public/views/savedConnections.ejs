@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NextEvent</title>
+    <% include ./partials/link_and_scripts.ejs %>
+
+</head>
+
+<body>
+<% include ./partials/navbar.ejs %>
+<main>
+    <section class="my-event-history">
+        <h2>Events History</h2>
+        <article>
+            <h3>My Events</h3>
+            <table class="table savedConnection-table table-striped table-bordered table-hover">
+                <thead class="thead-light">
+                <tr>
+                    <th>Event</th>
+                    <th>Category</th>
+                    <th>Going?</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% savedConnectionDetails.forEach(function (item) { %>
+                    <tr>
+                        <td><%= item.connectionName %></td>
+                        <td><%= item.connectionTopic == "music" ? "Music" : "Food & Drinks" %></td>
+                        <td><%= item.connectionStatus %></td>
+                        <td>
+                            <button class="btn btn-warning"
+                                    onclick="window.location.href='../connections/<%= item.connectionId %>'">Update
+                            </button>
+                        </td>
+                        <td>
+                            <button class="savedConnectionDeleteButton btn btn-info"
+                                    data-ref="<%= item.connectionId %>">Delete
+                            </button>
+                        </td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </article>
+    </section>
+</main>
+<% include ./partials/footer.ejs %>
+</body>
+</html>

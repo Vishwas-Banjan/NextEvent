@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NextEvent</title>
+    <% include ./partials/link_and_scripts.ejs %>
+
+</head>
+
+<body>
+<% include ./partials/navbar.ejs %>
+<main>
+    <section>
+        <h2>Login</h2>
+        <article>
+            <form action="../user/login" method="post">
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="inputEmail" placeholder="Email" required>
+                    </div>
+                </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="inputPassword"
+                               placeholder="Must be at least 6 characters"
+                               required>
+                    </div>
+                    <% if (authFail.is == true) { %>
+                        <label for="authFailed" class="login-error col-form-label"><%= authFail.message %></label>
+                    <% } %>
+                </div>
+
+                <button type="submit" class="btn btn-warning">Sign in</button>
+            </form>
+        </article>
+    </section>
+</main>
+<% include ./partials/footer.ejs %>
+</body>
+</html>

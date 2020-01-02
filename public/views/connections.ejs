@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NextEvent</title>
+    <% include ./partials/link_and_scripts.ejs %>
+</head>
+
+<body>
+<% include ./partials/navbar.ejs %>
+
+<main>
+    <section>
+        <h2>Music Events</h2>
+        <div class="card-columns">
+            <% connections.forEach(function (item) { if (item.connectionTopic == "music") { %>
+                <article class="event">
+                    <a href="../connections/<%= item.connectionId %>">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/images/<%= item.connectionImage %>" alt="Avatar">
+                            <div class="card-body">
+                                <header class="card-title">
+                                    <h3><b><%= item.connectionName %></b></h3>
+                                </header>
+                                <p class="card-text"><%= item.connectionDate %></p>
+                                <div class="card-footer">
+                                    <small class="text-muted"><%= item.connectionTime %></small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            <% } }) %>
+        </div>
+    </section>
+    <section>
+        <h2>Food & Drink events</h2>
+        <div class="card-columns">
+            <% connections.forEach(function (item) { if (item.connectionTopic == "food-drinks") { %>
+                <article class="event">
+                    <a href="../connections/<%= item.connectionId %>">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/images/<%= item.connectionImage %>" alt="Avatar">
+                            <div class="card-body">
+                                <header class="card-title">
+                                    <h3><b><%= item.connectionName %></b></h3>
+                                </header>
+                                <p class="card-text"><%= item.connectionDate %></p>
+                                <div class="card-footer">
+                                    <small class="text-muted"><%= item.connectionTime %></small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            <% } }) %>
+        </div>
+    </section>
+</main>
+<% include ./partials/footer.ejs %>
+</body>
+</html>

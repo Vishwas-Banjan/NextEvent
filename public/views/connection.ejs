@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NextEvent</title>
+    <% include ./partials/link_and_scripts.ejs %>
+
+</head>
+
+<body>
+<% include ./partials/navbar.ejs %>
+<main>
+    <section class="connection-detail">
+        <h2><%= connectionInfo.connectionName %></h2>
+        <article class="connection-detail-main">
+            <div class="card">
+                <img class="card-img-bottom" src="../assets/images/<%= connectionInfo.connectionImage %>" alt="Avatar"
+                     id="hostImage">
+                <div class="card-body host-details">
+                    <p class="card-text"><strong>Hosted By:</strong> <%= connectionInfo.connectionHost %></p>
+                    <p class="card-text"><strong>When?
+                            :</strong> <%= connectionInfo.connectionDate %>
+                    </p>
+                    <p class="card-text"><strong>Time? :</strong> <%= connectionInfo.connectionTime %>
+                        to <%= connectionInfo.connectionTimeEnd %></p>
+                    <p class="card-text"><strong>Where?:</strong> <%= connectionInfo.connectionLocation %> </p>
+                </div>
+            </div>
+        </article>
+        <aside class="action-sidebar">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Are you going?</h2>
+                    <button id="connectionYesBtn" class="btn btn-primary action-button button-yes"
+                            data-ref="<%= connectionInfo.connectionId %>">Yes
+                    </button>
+                    <button id="connectionNoBtn" class="btn btn-primary action-button button-no"
+                            data-ref="<%= connectionInfo.connectionId %>">
+                        No
+                    </button>
+                    <button id="connectionMaybeBtn" class="btn btn-primary action-button button-maybe"
+                            data-ref="<%= connectionInfo.connectionId %>">
+                        Maybe
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <% if (user) { if (user.userId == connectionInfo.connectionCreatedBy) { %>
+            <aside class="action-sidebar">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Delete Event?</h2>
+                        <button id="deleteConnectionYesBtn" class="btn btn-primary action-button button-yes"
+                                data-ref="<%= connectionInfo.connectionId %>">Yes
+                        </button>
+                    </div>
+                </div>
+            </aside>
+        <% } } %>
+        <% allConnections.forEach(function (item) { %>
+            <input type="hidden" name="allConnections" value="<%= item.connectionId %>" class="allConnections">
+        <% }) %>
+        <article class="connection-detail-info">
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        Description
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <%= connectionInfo.connectionHost + " " + connectionInfo.connectionDetails %>
+                    </p>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>
+
+<% include ./partials/footer.ejs %>
+</body>
+</html>

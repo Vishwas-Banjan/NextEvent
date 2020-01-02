@@ -1,0 +1,24 @@
+<header class="banner">
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <a href="/" class="navbar-brand">
+            <img src="../assets/images/logo1.png" alt="Logo" id="logo">
+        </a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="../connections/">Connections</a></li>
+            <li class="nav-item"><a class="nav-link" href="../connections/new-event">Create Event</a></li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <% if (user == null) { %>
+                <li class="nav-item"><a class="nav-link" href="../user/signup">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" href="../user/login">Login</a></li>
+            <% } %>
+            <% if (user != null) { %>
+                <li class="nav-item"><a class="logout-btn nav-link" href="../user/logout">Logout</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" id="loginName"
+                       href="../user/savedConnections"><%= user.userFirstName + " " + user.userLastName %></a>
+                </li>
+            <% } %>
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title><%= db.websiteHeaderTitle %></title>
+    <% include ./partials/link_and_scripts.ejs %>
+
+</head>
+
+<body>
+<% include ./partials/navbar.ejs %>
+<main class="home-page">
+    <section>
+        <h2><%= db.aboutUsTitle %></h2>
+        <article>
+            <h3><%= db.aboutUsSubtitle %></h3>
+            <p><%= db.aboutUsDescription %></p>
+        </article>
+    </section>
+</main>
+<% include ./partials/footer.ejs %>
+</body>
+</html>

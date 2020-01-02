@@ -1,0 +1,24 @@
+{
+  "name": "assignment2",
+  "version": "1.0.0",
+  "main": "routes/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vishwas Banjan",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.2.0",
+    "helmet": "^3.21.2",
+    "moment": "^2.24.0",
+    "mongoose": "^5.7.10",
+    "shortid": "^2.2.15"
+  },
+  "devDependencies": {},
+  "description": ""
+}
